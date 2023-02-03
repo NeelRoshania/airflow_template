@@ -23,8 +23,9 @@ A template for managing workflows that require programmatic authoring, schedulin
 5. `airflow db shell` to log into airflow database to confirm tables created
 
 **Starting the webserver**
-1. `airflow webserver --port 8080`
-2. Open browser, then `http://localhost:8080/`
+1. `airflow users create --help` to [create a user](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/security/webserver.html#web-authentication) to access the UI
+2. `airflow webserver --port 8080`
+1. Open browser, then `http://localhost:8080/`
 
 **Jupyter kernel setup**
 1. `jupyter kernelspec uninstall .example_env` - remove existing kernels called .example_env
