@@ -8,10 +8,23 @@ A template for managing workflows that require programmatic authoring, schedulin
 
 **Module setup**
 1. `python3 -m venv .env` and `pip3 install --upgrade pip` 
-2. `cd .env/scripts ` then `activate`
+2. `source .env/bin/activate` then `sudo chmod 774 setup.sh`
 3. Modify `setup.cfg` and `src`
 4. `pip3 install -e .`
-5. `pip install git+https://git.zoominfo.com/ZoomInformation/zoomtools.git`
+5. `./setup.sh`
+6. `airflow info` (CLI should be available if your virtual environment is activated)
+7. `airflow cheat-sheet` for general CLI guidance
+
+**POSTGRESQL backend setup**
+1. [Create database, user and grant privaleges to airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database)
+2. Modify `pg_hba.conf` to authenticate airflow user
+3. Restart postgres server, `sudo service postgresql restart`
+4. Initialize database `airflow db init` then `airflow db check`
+5. `airflow db shell` to log into airflow database to confirm tables created
+
+**Starting the webserver**
+1. `airflow webserver --port 8080`
+2. Open browser, then `http://localhost:8080/`
 
 **Jupyter kernel setup**
 1. `jupyter kernelspec uninstall .example_env` - remove existing kernels called .example_env
@@ -45,6 +58,9 @@ A template for managing workflows that require programmatic authoring, schedulin
 ### References
 - Airflow
     - [Apache Airflow](https://airflow.apache.org/)
+    - [Quick start](https://airflow.apache.org/docs/apache-airflow/stable/start.html)
+    - [Installation](https://airflow.apache.org/docs/apache-airflow/stable/installation/installing-from-pypi.html)
+    - [Set up database backend](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html)
 - AWS
     - [CLI installation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
     - [SSM installation](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html#install-plugin-debian)
