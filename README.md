@@ -15,7 +15,7 @@ A template for managing workflows that require programmatic authoring, schedulin
 6. `airflow info` (CLI should be available if your virtual environment is activated)
 7. `airflow cheat-sheet` for general CLI guidance
 
-**POSTGRESQL backend setup**
+**POSTGRES backend setup**
 1. [Create database, user and grant privaleges to airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database)
 2. Modify `pg_hba.conf` to authenticate airflow user
 3. Restart postgres server, `sudo service postgresql restart`
@@ -27,6 +27,8 @@ A template for managing workflows that require programmatic authoring, schedulin
 1. `airflow users create --help` to [create a user](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/security/webserver.html#web-authentication) for UI access
 2. `airflow webserver --port 8080` to start the web server
 3. Open browser, navigate to `http://localhost:8080/` to access to UI
+4. If using `screen`, ensure `AIRFLOW_HOME` is pointing to correct `airflow.cfg`
+    - check with `airflow info`
 
 **Jupyter kernel setup**
 1. `jupyter kernelspec uninstall .example_env` - remove existing kernels called .example_env
@@ -64,6 +66,9 @@ A template for managing workflows that require programmatic authoring, schedulin
     - [Installation](https://airflow.apache.org/docs/apache-airflow/stable/installation/installing-from-pypi.html)
     - [Set up database backend](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html)
     - [Postgres + Airflow db: permission denied for schema public](https://stackoverflow.com/questions/74390647/postgres-airflow-db-permission-denied-for-schema-public)
+    - Webserver debugging
+        - [Error: Already running on PID XXXX](https://stackoverflow.com/questions/55729303/airflow-webserver-started-but-ui-doesnt-show-in-browser)
+        - [airflow shell not initializing intended database](https://stackoverflow.com/questions/69093243/db-init-with-postgres-for-airflow)
 - AWS
     - [CLI installation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
     - [SSM installation](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html#install-plugin-debian)
