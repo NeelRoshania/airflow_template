@@ -11,7 +11,7 @@ A template for managing workflows that require programmatic authoring, schedulin
 2. `source .env/bin/activate` then `sudo chmod 774 setup.sh`
 3. Modify `setup.cfg` and `src`
 4. `pip3 install -e .`
-5. `./setup.sh`
+5. `sudo chmod 774 setup.sh` then `./setup.sh`
 6. `airflow info` (CLI should be available if your virtual environment is activated)
 7. `airflow cheat-sheet` for general CLI guidance
 
@@ -19,6 +19,7 @@ A template for managing workflows that require programmatic authoring, schedulin
 1. [Create database, user and grant privaleges to airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database)
 2. Modify `pg_hba.conf` to authenticate airflow user
 3. Restart postgres server, `sudo service postgresql restart`
+4. Define SqlAlchemy [connection string](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database) in `airflow/airflow.cfg`
 4. Initialize database `airflow db init` then `airflow db check`
 5. `airflow db shell` to log into airflow database to confirm tables created
 
@@ -62,6 +63,7 @@ A template for managing workflows that require programmatic authoring, schedulin
     - [Quick start](https://airflow.apache.org/docs/apache-airflow/stable/start.html)
     - [Installation](https://airflow.apache.org/docs/apache-airflow/stable/installation/installing-from-pypi.html)
     - [Set up database backend](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html)
+    - [Postgres + Airflow db: permission denied for schema public](https://stackoverflow.com/questions/74390647/postgres-airflow-db-permission-denied-for-schema-public)
 - AWS
     - [CLI installation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
     - [SSM installation](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html#install-plugin-debian)
