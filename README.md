@@ -40,7 +40,7 @@ Windows installation
 1. Recommended Executor, `LocalExecutor`
     - Change `executor` parameter in `~/airflow/airflow.cfg`
 2. `airflow info` to confirm intended [Executor](https://airflow.apache.org/docs/apache-airflow/2.5.1/core-concepts/executor/index.html)
-3.`airflow scheduler`
+3. `airflow scheduler`
 
 **Usage instructions**
 1. Ensure that the webserver and scheduler services are running.
