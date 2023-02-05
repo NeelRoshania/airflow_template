@@ -31,13 +31,15 @@ from airflow.operators.bash import BashOperator
                 - https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/debug.html
 
             Ensure no syntax errors - run the python script
+                - Might not work on windoes
 
             Measure  “real time” to process DAG
-                time python dags/pipeline_definition_tempate.py
-                https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html#testing-a-dag
+                - time python dags/pipeline_definition_tempate.py
+                    - https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html#testing-a-dag
+                - Might now work on windows
 
             Command Line Metadata Validation, https://airflow.apache.org/docs/apache-airflow/stable/tutorial/fundamentals.html#testing
-                airflow db init # initialize the database tables
+                airflow db init # ONLY IN DEVELOPMENT - initialize the database tables
                 airflow dags list # print the list of active DAGs
                 airflow tasks list tutorial # prints the list of tasks in the "tutorial" DAG
                 airflow tasks list tutorial --tree # prints the hierarchy of tasks in the "tutorial" DAG
@@ -120,6 +122,6 @@ with DAG(
     # define sequence of tasks
     t1 >> [t2, t3]
 
-# testing
+# testing in production
 if __name__ == "__main__":
     dag.test()
