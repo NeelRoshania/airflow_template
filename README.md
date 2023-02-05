@@ -1,5 +1,5 @@
 # airflow_template
-A template for managing workflows that require programmatic authoring, scheduling and monitoring 
+A template for managing workflows that require programmatic authoring, scheduling and monitoring.
 
 ### Usage
 1. Define and test your dags in `~/git/airflow_template/dags`, then upload to `~/airflow/dags/airflow_template`
@@ -39,7 +39,7 @@ Windows installation
 **Setup the scheduler**
 1. Recommended Executor, `LocalExecutor`
     - Change `executor` parameter in `~/airflow/airflow.cfg`
-2. `airflow info` to confirm intended (Executor)[https://airflow.apache.org/docs/apache-airflow/2.5.1/core-concepts/executor/index.html]
+2. `airflow info` to confirm intended [Executor](https://airflow.apache.org/docs/apache-airflow/2.5.1/core-concepts/executor/index.html)
 3.`airflow scheduler`
 
 **Usage instructions**
