@@ -86,7 +86,10 @@ Windows installation
     - [Quick start](https://airflow.apache.org/docs/apache-airflow/stable/start.html)
     - [Installation](https://airflow.apache.org/docs/apache-airflow/stable/installation/installing-from-pypi.html)
     - [Set up database backend](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html)
-    - [Postgres + Airflow db: permission denied for schema public](https://stackoverflow.com/questions/74390647/postgres-airflow-db-permission-denied-for-schema-public)
+    - Postgres backend debugging
+        - Check that the server is running, `service --status-all`. 
+            - Restart if neccesary, `sudo service postgresql restart`
+        - [Postgres + Airflow db: permission denied for schema public](https://stackoverflow.com/questions/74390647/postgres-airflow-db-permission-denied-for-schema-public)
     - Webserver debugging
         - [Error: Already running on PID XXXX](https://stackoverflow.com/questions/55729303/airflow-webserver-started-but-ui-doesnt-show-in-browser)
         - [airflow shell not initializing intended database](https://stackoverflow.com/questions/69093243/db-init-with-postgres-for-airflow)
