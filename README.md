@@ -8,15 +8,18 @@ A template for managing workflows that require programmatic authoring, schedulin
 
 **Module setup**
 1. `python3 -m venv .env` and `pip3 install --upgrade pip` 
-2. `source .env/bin/activate` then `sudo chmod 774 setup.sh`
-3. Modify `setup.cfg` and `src`
+2. `source .env/bin/activate`
+3. `sudo chmod 774 setup.sh` then `./setup.sh`
 4. `pip3 install -e .`
-5. `sudo chmod 774 setup.sh` then `./setup.sh`
-6. `airflow info` (CLI should be available if your virtual environment is activated)
-7. `airflow cheat-sheet` for general CLI guidance
+5. `airflow info` (CLI should be available if your virtual environment is activated)
+6. `airflow cheat-sheet` for general CLI guidance
 
 Windows installation
-1. `pip3 install "apache-airflow[postgres]==2.5.1" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.1/constraints-3.9.txt"`
+1. `python3 -m venv .env` and `pip3 install --upgrade pip` 
+2. Activate `.env`
+3. `pip3 install "apache-airflow[postgres]==2.5.1" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.1/constraints-3.9.txt"`
+4. Modify `setup.cfg` and `src`
+5. `pip3 install -e .`
 
 **POSTGRES backend setup**
 1. [Create database, user and grant privaleges to airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database)
