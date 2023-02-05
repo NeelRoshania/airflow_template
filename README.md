@@ -25,7 +25,7 @@ Windows installation
 1. [Create database, user and grant privaleges to airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database)
 2. Modify `pg_hba.conf` to authenticate airflow user
 3. Restart postgres server, `sudo service postgresql restart`
-4. Define SqlAlchemy [connection string](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database) in `airflow/airflow.cfg`
+4. Define SqlAlchemy [connection string](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database) in `~/airflow/airflow.cfg`
 5. Initialize database `airflow db init` then `airflow db check`
 6. `airflow db shell` to log into airflow database to confirm tables created
 
@@ -33,12 +33,12 @@ Windows installation
 1. `airflow users create --help` to [create a user](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/security/webserver.html#web-authentication) for UI access
 2. `airflow webserver --port 8080` to start the web server
 3. Open browser, navigate to `http://localhost:8080/` to access to UI
-4. If using `screen`, ensure `AIRFLOW_HOME` is pointing to correct `airflow.cfg`
+4. If using `screen`, ensure `AIRFLOW_HOME` is pointing to correct `~/airflow/airflow.cfg`
     - check with `airflow info`
 
 **Setup the scheduler**
 1. Recommended Executor, `LocalExecutor`
-    - Change `executor` parameter in `airflow.cfb`
+    - Change `executor` parameter in `~/airflow/airflow.cfg`
 2. `airflow info` to confirm intended (Executor)[https://airflow.apache.org/docs/apache-airflow/2.5.1/core-concepts/executor/index.html]
 3.`airflow scheduler`
 
