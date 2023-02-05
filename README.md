@@ -44,7 +44,9 @@ Windows installation
 
 **Usage instrcutions**
 1. Ensure that the webserver and scheduler services are running.
-2. 
+2. The default dags directory is `/home/user/airflow/dags`
+    - Recommend that these dags be treated as production dags
+    - Any testing should be done in `airflow_template/dags`
 
 
 **Jupyter kernel setup**
