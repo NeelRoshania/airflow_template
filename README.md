@@ -29,12 +29,23 @@ Windows installation
 4. Initialize database `airflow db init` then `airflow db check`
 5. `airflow db shell` to log into airflow database to confirm tables created
 
-**Starting the webserver**
+**Setup the webserver**
 1. `airflow users create --help` to [create a user](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/security/webserver.html#web-authentication) for UI access
 2. `airflow webserver --port 8080` to start the web server
 3. Open browser, navigate to `http://localhost:8080/` to access to UI
 4. If using `screen`, ensure `AIRFLOW_HOME` is pointing to correct `airflow.cfg`
     - check with `airflow info`
+
+**Setup the scheduler**
+1. Recommended Executor, `LocalExecutor`
+    - Change `executor` parameter in `airflow.cfb`
+2. `airflow info` to confirm intended (Executor)[https://airflow.apache.org/docs/apache-airflow/2.5.1/core-concepts/executor/index.html]
+2.`airflow scheduler`
+
+**Usage instrcutions**
+1. Ensure that the webserver and scheduler services are running.
+2. 
+
 
 **Jupyter kernel setup**
 1. `jupyter kernelspec uninstall .example_env` - remove existing kernels called .example_env
@@ -75,6 +86,11 @@ Windows installation
     - Webserver debugging
         - [Error: Already running on PID XXXX](https://stackoverflow.com/questions/55729303/airflow-webserver-started-but-ui-doesnt-show-in-browser)
         - [airflow shell not initializing intended database](https://stackoverflow.com/questions/69093243/db-init-with-postgres-for-airflow)
+    - UI debugging
+        - `Do not use SequentialExecutor in production`
+            - `airflow config get-value core executor` to confirm current Executor
+            - Check `airflow.cfg` to see that inteded Executor has been defined
+            - Restart the webserver
 - AWS
     - [CLI installation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
     - [SSM installation](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html#install-plugin-debian)
