@@ -2,7 +2,7 @@
 A template for managing workflows that require programmatic authoring, scheduling and monitoring 
 
 ### Usage
-1. Define and test your dags in `airflow_template/dags`, then update in `~/airflow/dags`
+1. Define and test your dags in `airflow_template/dags`, then upload to `~/airflow/dags/airflow_template`
 
 ### Installation guide
 
