@@ -15,6 +15,9 @@ A template for managing workflows that require programmatic authoring, schedulin
 6. `airflow info` (CLI should be available if your virtual environment is activated)
 7. `airflow cheat-sheet` for general CLI guidance
 
+Windows installation
+1. `pip3 install "apache-airflow[postgres]==2.5.1" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.1/constraints-3.9.txt"`
+
 **POSTGRES backend setup**
 1. [Create database, user and grant privaleges to airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database)
 2. Modify `pg_hba.conf` to authenticate airflow user
