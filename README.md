@@ -21,7 +21,7 @@ Windows installation
 4. Modify `setup.cfg` and `src`
 5. `pip3 install -e .`
 
-**POSTGRES backend setup**
+**PostgreSQL backend setup**
 1. [Create database, user and grant privaleges to airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database)
 2. Modify `pg_hba.conf` to authenticate airflow user
 3. Restart postgres server, `sudo service postgresql restart`
