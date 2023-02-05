@@ -2,7 +2,7 @@
 A template for managing workflows that require programmatic authoring, scheduling and monitoring 
 
 ### Usage
-1. TBD
+1. Define and test your dags in `airflow_template/dags`, then updated in `/home/user/airflow/dags`
 
 ### Installation guide
 
@@ -26,8 +26,8 @@ Windows installation
 2. Modify `pg_hba.conf` to authenticate airflow user
 3. Restart postgres server, `sudo service postgresql restart`
 4. Define SqlAlchemy [connection string](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database) in `airflow/airflow.cfg`
-4. Initialize database `airflow db init` then `airflow db check`
-5. `airflow db shell` to log into airflow database to confirm tables created
+5. Initialize database `airflow db init` then `airflow db check`
+6. `airflow db shell` to log into airflow database to confirm tables created
 
 **Setup the webserver**
 1. `airflow users create --help` to [create a user](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/security/webserver.html#web-authentication) for UI access
@@ -40,14 +40,13 @@ Windows installation
 1. Recommended Executor, `LocalExecutor`
     - Change `executor` parameter in `airflow.cfb`
 2. `airflow info` to confirm intended (Executor)[https://airflow.apache.org/docs/apache-airflow/2.5.1/core-concepts/executor/index.html]
-2.`airflow scheduler`
+3.`airflow scheduler`
 
-**Usage instrcutions**
+**Usage instructions**
 1. Ensure that the webserver and scheduler services are running.
 2. The default dags directory is `/home/user/airflow/dags`
     - Recommend that these dags be treated as production dags
     - Any testing should be done in `airflow_template/dags`
-
 
 **Jupyter kernel setup**
 1. `jupyter kernelspec uninstall .example_env` - remove existing kernels called .example_env
