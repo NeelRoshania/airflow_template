@@ -2,7 +2,7 @@
 A template for managing workflows that require programmatic authoring, scheduling and monitoring 
 
 ### Usage
-1. Define and test your dags in `airflow_template/dags`, then updated in `/home/user/airflow/dags`
+1. Define and test your dags in `airflow_template/dags`, then updated in `~/airflow/dags`
 
 ### Installation guide
 
@@ -80,6 +80,7 @@ Windows installation
 ### References
 - Airflow
     - [Apache Airflow](https://airflow.apache.org/)
+    - [Core concepts](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/index.html)
     - [Quick start](https://airflow.apache.org/docs/apache-airflow/stable/start.html)
     - [Installation](https://airflow.apache.org/docs/apache-airflow/stable/installation/installing-from-pypi.html)
     - [Set up database backend](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html)
