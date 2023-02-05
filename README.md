@@ -2,7 +2,7 @@
 A template for managing workflows that require programmatic authoring, scheduling and monitoring 
 
 ### Usage
-1. Define and test your dags in `airflow_template/dags`, then upload to `~/airflow/dags/airflow_template`
+1. Define and test your dags in `~/git/airflow_template/dags`, then upload to `~/airflow/dags/airflow_template`
 
 ### Installation guide
 
@@ -44,9 +44,10 @@ Windows installation
 
 **Usage instructions**
 1. Ensure that the webserver and scheduler services are running.
-2. The default dags directory is `/home/user/airflow/dags`
+2. The default dags directory is `~/airflow/dags`
     - Recommend that these dags be treated as production dags
-    - Any testing should be done in `airflow_template/dags`
+    - Any testing should be done in `~/git/airflow_template/dags`
+3. To disable tutorial dags, set `load_examples = False` in `~/airflow/airflow.cfg`
 
 **Jupyter kernel setup**
 1. `jupyter kernelspec uninstall .example_env` - remove existing kernels called .example_env
