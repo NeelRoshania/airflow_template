@@ -71,7 +71,7 @@ with DAG(
         # 'trigger_rule': 'all_success'
     },
     description="This a pipeline definition template or a DAG definition file",
-    schedule=timedelta(days=1),
+    schedule=timedelta(minutes=60),
     start_date=datetime(2021, 1, 1),
     catchup=False,
     tags=["example"],

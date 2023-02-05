@@ -48,6 +48,7 @@ Windows installation
     - Recommend that these dags be treated as production dags
     - Any testing should be done in `~/git/airflow_template/dags`
 3. To disable tutorial dags, set `load_examples = False` in `~/airflow/airflow.cfg`
+    - restart webserver and scheduler
 
 **Jupyter kernel setup**
 1. `jupyter kernelspec uninstall .example_env` - remove existing kernels called .example_env
