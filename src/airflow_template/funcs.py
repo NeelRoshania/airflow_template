@@ -1,5 +1,7 @@
 import time
-from airflow_template import logger
+import logging
+
+LOGGER = logging.getLogger(__name__) # this logger is defined seperately, see logging.conf
 
 def get_timestamp(eseconds:float) -> str:
 
@@ -22,5 +24,12 @@ def get_duration(start_time: float, end_time: float) -> float:
     """
     return f'{end_time-start_time:.2f}s'
 
-def some_func():
-    logger.info(f'{get_timestamp(time.time())} - hello airflow!')
+def specific_func(text:str) -> None:
+
+    """
+        Service to....
+
+    """
+    LOGGER.debug(text)
+
+    return None
