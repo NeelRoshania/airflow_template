@@ -23,9 +23,10 @@ Windows installation
 
 **PostgreSQL backend setup**
 1. [Create database, user and grant privaleges to airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database)
-2. Modify `pg_hba.conf` to authenticate airflow user
+2. Modify `etc/postgresql/14/main/pg_hba.conf` to [authenticate](https://www.postgresql.org/docs/current/auth-pg-hba-conf.html) the airflow user
 3. Restart postgres server, `sudo service postgresql restart`
 4. Define SqlAlchemy [connection string](https://airflow.apache.org/docs/apache-airflow/stable/howto/set-up-database.html#setting-up-a-postgresql-database) in `~/airflow/airflow.cfg`
+    - `postgresql+psycopg2://airflow_user:airflow_pass@localhost/airflow_db`
 5. Initialize database `airflow db init` then `airflow db check`
 6. `airflow db shell` to log into airflow database to confirm tables created
 
@@ -35,6 +36,7 @@ Windows installation
 3. Open browser, navigate to `http://localhost:8080/` to access to UI
 4. If using `screen`, ensure `AIRFLOW_HOME` is pointing to correct `~/airflow/airflow.cfg`
     - check with `airflow info`
+    - start a named screen session, `screen -S airflow-webserver`
 
 **Setup the scheduler**
 1. Recommended Executor, `LocalExecutor`
@@ -74,6 +76,7 @@ Windows installation
 
 1. Access Airflow UI: port forward server to `http://localhost:8082/home` 
     - `aws ssm start-session --target [instance_id] --region us-west-2 --document-name AWS-StartPortForwardingSession --parameters '{"portNumber":["8080"], "localPortNumber":["8082"]}'`
+    - Additional [sample IAM policies](https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-restrict-access-examples.html) for Session Manager
 2. SSM into server
     - `aws ssm start-session --target [instance_id] --region us-west-2`
     - switcher to user
